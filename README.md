@@ -25,5 +25,5 @@ Docstring references begin with `[-*`.
 
 E.g.
 ```
-[-*method FRMG>show_confusion_matrices
+[-*func_or_method FRMG>show_confusion_matrices
 ```
