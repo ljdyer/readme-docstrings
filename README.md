@@ -1,4 +1,4 @@
-# README Docstring
+# README Docstrings
 
 A Python library for pulling docstrings from Python code files into markdown files.
 
