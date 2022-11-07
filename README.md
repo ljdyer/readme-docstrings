@@ -27,3 +27,17 @@ E.g.
 ```
 [-*func_or_method FRMG>show_confusion_matrices
 ```
+
+## How to use
+
+### Install the library inside a virtual environment using `pip`
+
+```
+pip install git+https://github.com/ljdyer/readme-docstrings.git
+```
+
+### Run from command line
+
+```
+readme_docstrings README_tmp.md
+```
