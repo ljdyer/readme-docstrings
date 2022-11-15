@@ -19,7 +19,7 @@ parser.add_argument(
 def readme_docstrings():
 
     args = parser.parse_args()
-    with open(args.source_file, 'r') as f:
+    with open(args.source_file, 'r', encoding='utf-8') as f:
         template = f.read()
 
     # Get config tags
@@ -32,7 +32,7 @@ def readme_docstrings():
     del config['TARGET']
     files = {}
     for fref, fp in config.items():
-        with open(fp, 'r') as f:
+        with open(fp, 'r', encoding='utf-8') as f:
             files[fref] = f.read()
 
     # Handle docstring references
@@ -49,6 +49,6 @@ def readme_docstrings():
             template = template.replace(tag, f"```python\n{find[0]}\n```")
     assert '[-*' not in template
 
-    with open(target, 'w') as f:
+    with open(target, 'w', encoding='utf-8') as f:
         f.write(template)
     print(f'Wrote markdown file with docstrings to {target}.')
