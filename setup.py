@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='readme_docstrings',
-    version='1.1',
+    version='1.2',
     description='Pull docstrings from Python code files into markdown files',
     author='Laurence Dyer',
     author_email='ljdyer@gmail.com',
