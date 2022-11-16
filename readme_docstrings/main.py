@@ -2,8 +2,14 @@ import argparse
 import re
 
 CONFIG_TAG = r'\[\-\^(.*)\=(.*)'
-METHOD_MATCH = r' *# ====================\
-[\r\n\s]* *def {}\(.*?(?:\"\"\").*?(?:\"\"\")'
+
+def func_or_method_match_re(func_or_method_name):
+    return re.compile(
+        rf""" *# ====================\
+[\r\n\s]* def {func_or_method_name}\(\
+.*(?:\"\"\").*(?:\"\"\")""",
+        re.DOTALL
+    )
 
 parser = argparse.ArgumentParser(
     prog = 'README Docstrings',
@@ -41,7 +47,8 @@ def readme_docstrings():
     for tag, cmd, ref in tags:
         if cmd == 'func_or_method':
             file = files[ref[0]]
-            find = re.findall(METHOD_MATCH.format(ref[-1]), file, re.DOTALL)
+            func_or_method_re = func_or_method_match_re(ref[-1])
+            find = func_or_method_re.findall(file)
             try: 
                 assert len(find) == 1
             except:
