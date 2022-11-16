@@ -5,7 +5,7 @@ CONFIG_TAG = r'\[\-\^(.*)\=(.*)'
 
 def func_or_method_match_re(func_or_method_name):
     return re.compile(
-        fr""" *# ====================\
+        rf""" *# ====================\
 [\r\n\s]* def {func_or_method_name}\(\
 .*(?:\"\"\").*(?:\"\"\")""",
         re.DOTALL
