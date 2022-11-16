@@ -3,7 +3,7 @@ import re
 
 CONFIG_TAG = r'\[\-\^(.*)\=(.*)'
 METHOD_MATCH = r' *# ====================\
-[\r\n\s]* *def {}.*?(?:\"\"\").*?(?:\"\"\")'
+[\r\n\s]* *def {}\(.*?(?:\"\"\").*?(?:\"\"\")'
 
 parser = argparse.ArgumentParser(
     prog = 'README Docstrings',
